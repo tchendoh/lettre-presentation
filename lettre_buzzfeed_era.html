@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12 raisons de m'ajouter à votre équipe — Eric</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Georgia&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#222222;
+    --ink-soft:#6b6b6b;
+    --blue:#2196d8;
+    --red:#ee3322;
+    --line:#ececec;
+    --sans:'Poppins','Helvetica Neue',Arial,sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+  }
+
+  .wrap{ max-width:680px; margin:0 auto; padding:0 20px; }
+
+  /* ============ HEADER BAR (façon barre de site BuzzFeed) ============ */
+  .topbar{
+    background:var(--ink);
+    color:#fff;
+    text-align:center;
+    padding:10px 0;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+
+  /* ============ TRENDING BADGE (façon BuzzFeed) ============ */
+  .trending-badge{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:28px 0 0;
+  }
+  .trending-badge .icon{
+    width:34px; height:34px;
+    border-radius:50%;
+    background:var(--red);
+    display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto;
+  }
+  .trending-badge .icon svg{ width:18px; height:18px; }
+  .trending-badge .label{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:15px;
+    color:var(--ink);
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    padding:44px 0 30px;
+    text-align:center;
+  }
+  .kicker-pill{
+    display:block;
+    background:none;
+    color:var(--ink-soft);
+    font-weight:700;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    padding:0;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:var(--sans);
+    font-weight:900;
+    font-size:clamp(30px, 6vw, 44px);
+    line-height:1.12;
+    margin:0 0 18px;
+    letter-spacing:-.01em;
+  }
+  h1 .hl{
+    text-decoration:underline;
+    text-decoration-color:var(--red);
+    text-decoration-thickness:5px;
+    text-underline-offset:6px;
+  }
+  .strike{
+    text-decoration:line-through;
+    text-decoration-thickness:3px;
+    text-decoration-color:currentColor;
+    text-underline-offset:0;
+  }
+  .subhead{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 auto 22px;
+  }
+  .byline{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-size:13px; color:var(--ink-soft); font-weight:600;
+  }
+  .byline .avatar{
+    width:28px; height:28px; border-radius:50%;
+    background:var(--blue); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800;
+  }
+
+  .share-row{
+    display:flex; gap:8px; justify-content:center; margin:22px 0 6px;
+  }
+  .share-btn{
+    width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:800; color:#fff;
+    border:none;
+  }
+  .share-btn.fb{ background:#3b5998; }
+  .share-btn.tw{ background:#1da1f2; }
+  .share-btn.link{ background:var(--ink-soft); }
+
+  hr.divider{
+    border:none; border-top:2px solid var(--ink); margin:32px 0;
+  }
+
+  /* ============ NOTE INTRO ============ */
+  .intro-note{
+    background:#fafafa;
+    border-left:5px solid var(--blue);
+    border-radius:4px;
+    padding:18px 20px;
+    margin:0 0 40px;
+    font-size:16px;
+  }
+  .intro-note strong{ font-weight:800; }
+  .intro-note .signature{
+    display:block; margin-top:10px; font-weight:700; color:var(--blue);
+  }
+
+  /* ============ LISTE — style listicle vertical ============ */
+  .reasons{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+
+  .reason{
+    padding:38px 0;
+    border-bottom:2px dashed var(--line);
+  }
+  .reason:last-child{ border-bottom:none; }
+
+  .reason-head{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom:14px;
+  }
+
+  .reason-number{
+    flex:0 0 auto;
+    font-family:var(--sans);
+    font-weight:900;
+    font-size:56px;
+    line-height:1;
+    -webkit-text-stroke: 2px var(--ink);
+    color:#fff;
+  }
+  /* couleurs alternées pour les gros numéros, façon listicle */
+  .reason:nth-child(6n+1) .reason-number{ color:var(--red); -webkit-text-stroke:0; }
+  .reason:nth-child(6n+2) .reason-number{ color:var(--blue); -webkit-text-stroke:0; }
+  .reason:nth-child(6n+3) .reason-number{ color:var(--ink); -webkit-text-stroke:0; }
+  .reason:nth-child(6n+4) .reason-number{ color:var(--ink); -webkit-text-stroke:0; }
+  .reason:nth-child(6n+5) .reason-number{ color:var(--red); -webkit-text-stroke:0; }
+  .reason:nth-child(6n) .reason-number{ color:var(--blue); -webkit-text-stroke:0; }
+
+  .reason h2{
+    font-family:var(--sans);
+    font-weight:800;
+    font-size:28px;
+    line-height:1.3;
+    margin:6px 0 0;
+  }
+  .reason p{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+
+  .visual-slot{
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.12);
+  }
+  .visual-slot img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .visual-caption{
+    text-align:center;
+    font-size:12px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-top:8px;
+  }
+
+  /* note de bas de liste (contenu brut / idées de rechange) */
+  .scratch-note{
+    font-size:13px;
+    color:var(--ink-soft);
+    background:#fafafa;
+    border-radius:6px;
+    padding:14px 16px;
+    margin-top:10px;
+  }
+
+  /* ============ ROUTE MAP ============ */
+  .route-map{ width:100%; height:auto; display:block; }
+  .route-line{ fill:none; stroke:var(--ink); stroke-width:2; stroke-dasharray:6 7; opacity:.4; }
+  .route-dot{ fill:#fff; stroke:var(--ink); stroke-width:1.5; }
+  .route-label{ font-family:var(--sans); font-weight:700; font-size:13px; fill:var(--ink); }
+  .route-traveler{ fill:var(--blue); stroke:var(--ink); stroke-width:1.5; }
+
+  /* ============ FOOTER ============ */
+  .footer{
+    padding:50px 0 70px;
+    text-align:center;
+    border-top:2px solid var(--ink);
+    margin-top:20px;
+  }
+  .footer .kicker{
+    font-size:13px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-soft); margin-bottom:14px; font-weight:700;
+  }
+  .footer h3{
+    font-family:var(--sans);
+    font-size:30px;
+    font-weight:900;
+    margin:0 0 26px;
+  }
+  .contact-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:14px;
+    color:#fff;
+    border:none;
+    padding:13px 24px;
+    border-radius:100px;
+    text-decoration:none;
+  }
+  .btn.primary{ background:var(--red); }
+  .btn.blue{ background:var(--blue); }
+  .btn.dark{ background:var(--ink); }
+  .btn:hover{ opacity:.85; }
+</style>
+</head>
+<body>
+
+<div class="topbar">✦ <span class="strike">Ripoff total</span> Librement inspiré d'un article Buzzfeed de 2013 ✦</div>
+
+<div class="wrap">
+
+  <div class="trending-badge">
+    <span class="icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 17L9 11L13 15L21 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 6H21V12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="label">Trending</span>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <span class="kicker-pill">Développeur mobile • Montréal</span>
+    <h1>12 raisons de m'ajouter à votre équipe</h1>
+    <p class="subhead">Parce qu'un bon dév, c'est pas juste quelqu'un qui sait coder un regex complexe en quatre secondes.</p>
+    <div class="byline">
+      <span class="avatar">E</span> Par Eric Chandonnet · Mis à jour aujourd'hui
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ================= NOTE INTRO ================= -->
+  <div class="intro-note">
+    <strong>Allô, moi c'est Eric.</strong> Si t'as reçu ce lien ludique, c'est que tu travailles dans une place qui est vraiment cool et que j'aimerais ça travailler avec vous.
+    <span class="signature">— Eric</span>
+  </div>
+
+  <!-- ================= RAISONS ================= -->
+  <section class="reasons">
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">1</div>
+        <h2>Je termine mon AEC en développement d'applications mobiles où j'ai reçu une bourse d'excellence!</h2>
+      </div>
+      <p>La preuve que j'absorbe rapidement les nouveaux stacks techniques et que le « ramp up » se fera très rapidement. </p>
+        <p>(À noter que la bourse a été réinvestie à payer plein de beignes pour ma classe.)</p>
+      <div class="visual-slot"><img src="gifs/grogu.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">2</div>
+        <h2>De retour à mes premiers amours : la programmation</h2>
+      </div>
+      <p>Après quelques années dans le milieu artistique où chaque contrat dépend d'une institution, je cherche maintenant la stabilité d'un poste où je pourrai m'investir à long terme!</p>
+      <div class="visual-slot"><img src="gifs/matrix.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">3</div>
+        <h2>Rationnel pour un artiste, créatif pour un dev</h2>
+      </div>
+      <p>Mais au-delà de ces stéréotypes, j'aime croire que j'ai un profil qui permet de proposer des solutions techniques ET penser à l'expérience utilisateur en même temps, ce qui accélère les itérations.</p>
+      <div class="visual-slot"><img src="gifs/smatte.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">4</div>
+        <h2>Humble junior, éternel étudiant</h2>
+      </div>
+      <p>Je sais faire la différence entre une question qui mérite de déranger quelqu'un et des réponses que Google (ou un coup d'œil à la doc) peut me donner en trente secondes. Une belle économie de temps pour toute l'équipe!</p>
+      <div class="visual-slot"><img src="gifs/actually.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">5</div>
+        <h2>Je suis plus sympathique que Claude</h2>
+      </div>
+      <p>Pour une fraction des tokens! Plus sérieusement, j'utilise l'IA de façon réfléchie et j'essaie constamment d'évaluer quand lui faire confiance et quand vérifier son travail.</p>
+      <div class="visual-slot"><img src="gifs/student.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">6</div>
+        <h2>Autant à l'aise en groupe qu'en solo</h2>
+      </div>
+      <p>Ce qui vous donne plus d'options dans l'assignation des tâches.</p>
+      <div class="visual-slot"><img src="gifs/habs.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">7</div>
+        <h2>Une bonne communication écrite!</h2>
+      </div>
+      <p>C'est plus agréable à lire, mais c'est aussi moins de malentendus dans les tickets, une documentation technique que les autres devs comprennent réellement, et des échanges clients qui n'ont pas besoin d'être repris par quelqu'un d'autre.</p>
+      <div class="visual-slot"><img src="gifs/communication.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">8</div>
+        <h2>J'adore la résolution de problème</h2>
+      </div>
+      <p>Ça réduit la fameuse dette technique et les fameux tickets zombies qui reviennent tout le temps!</p>
+      <div class="visual-slot"><img src="gifs/happy.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">9</div>
+        <h2>L'empathie pour me placer dans la peau du client et de la prochaine personne qui lira mon code</h2>
+      </div>
+      <p>J'écris du code pensé pour être relu et maintenu par d'autres, ce qui réduit le temps d'onboarding des futurs devs sur votre projet et diminue les coûts de maintenance à long terme.</p>
+      <div class="visual-slot"><img src="gifs/empathy.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">10</div>
+        <h2>Je gère bien le stress</h2>
+      </div>
+      <p>Je garde mon sang-froid pendant les enjeux de production où j'ai même tendance à bien performer et ce, en gardant ma bonne humeur! </p>
+      <div class="visual-slot"><img src="gifs/leo.gif" alt=""></div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">11</div>
+        <h2>Gars de région, gars de ville</h2>
+      </div>
+      <p>Né à Amos, en Abitibi, j'ai vécu la deuxième moitié de ma vie à Montréal. J'ai l'habitude de m'adapter à des contextes très différents, ce qui est utile pour travailler avec des équipes éparpillées et des clients de différents milieux!</p>
+      <div class="visual-slot">
+        <svg class="route-map" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+          <path class="route-line" d="M 70 130 Q 300 20 530 100" />
+
+          <g class="route-icon" transform="translate(45,78) scale(0.8)">
+            <rect x="-3" y="18" width="6" height="10" fill="var(--ink)"/>
+            <polygon points="0,-22 14,4 -14,4" fill="#3F7A46" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="0,-8 11,14 -11,14" fill="#3F7A46" stroke="var(--ink)" stroke-width="1.5"/>
+          </g>
+          <g class="route-icon" transform="translate(70,70)">
+            <rect x="-3" y="18" width="6" height="10" fill="var(--ink)"/>
+            <polygon points="0,-22 14,4 -14,4" fill="#4C9455" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="0,-8 11,14 -11,14" fill="#4C9455" stroke="var(--ink)" stroke-width="1.5"/>
+          </g>
+          <g class="route-icon" transform="translate(96,80) scale(0.75)">
+            <rect x="-3" y="18" width="6" height="10" fill="var(--ink)"/>
+            <polygon points="0,-22 14,4 -14,4" fill="#3F7A46" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="0,-8 11,14 -11,14" fill="#3F7A46" stroke="var(--ink)" stroke-width="1.5"/>
+          </g>
+
+          <circle class="route-dot" cx="70" cy="130" r="7"/>
+          <text class="route-label" x="70" y="155" text-anchor="middle">Amos</text>
+
+          <g class="route-icon" transform="translate(505,62) scale(0.85)">
+            <polygon points="0,-18 9,14 -9,14" fill="#FF7A1A" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="-11" y="9" width="22" height="5" fill="#fff" stroke="var(--ink)" stroke-width="1"/>
+            <rect x="-11" y="14" width="22" height="4" fill="#FF7A1A" stroke="var(--ink)" stroke-width="1"/>
+          </g>
+          <g class="route-icon" transform="translate(530,52)">
+            <polygon points="0,-20 10,16 -10,16" fill="#FF7A1A" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="-12" y="10" width="24" height="6" fill="#fff" stroke="var(--ink)" stroke-width="1"/>
+            <rect x="-12" y="16" width="24" height="4" fill="#FF7A1A" stroke="var(--ink)" stroke-width="1"/>
+          </g>
+          <g class="route-icon" transform="translate(555,64) scale(0.8)">
+            <polygon points="0,-18 9,14 -9,14" fill="#FF7A1A" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="-11" y="9" width="22" height="5" fill="#fff" stroke="var(--ink)" stroke-width="1"/>
+            <rect x="-11" y="14" width="22" height="4" fill="#FF7A1A" stroke="var(--ink)" stroke-width="1"/>
+          </g>
+
+          <circle class="route-dot" cx="530" cy="100" r="7"/>
+          <text class="route-label" x="530" y="125" text-anchor="middle">Montréal</text>
+          <circle class="route-traveler" r="6">
+            <animateMotion dur="4s" repeatCount="indefinite"
+              path="M 70 130 Q 300 20 530 100" />
+          </circle>
+        </svg>
+      </div>
+    </article>
+
+    <article class="reason">
+      <div class="reason-head">
+        <div class="reason-number">12</div>
+        <h2>J'adore recevoir du feedback</h2>
+      </div>
+      <p>Je prends une critique de code comme un cadeau, pas comme une attaque — ça accélère les revues et ça évite que les seniors filtrent leurs commentaires par politesse.</p>
+      <div class="visual-slot"><img src="gifs/TODO-feedback.gif" alt=""></div>
+    </article>
+
+    <p class="scratch-note">Autre possibilité : gars de région/ville, souci du détail, capacité d'apprentissage, éternel étudiant, bon pour conceptualiser,
+      conceptualisation, capacité à vulgariser les concepts, bon pour parler aux non-initiés, souci du détail pour le front-end,
+      capacité d'apprentissage
+    </p>
+
+    <!-- Une fois le contenu peaufiné, retirer les cartes les plus faibles pour revenir à 12. -->
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <section class="footer">
+    <div class="kicker">Curieux d'en savoir plus?</div>
+    <h3>On en jase?</h3>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:eric.chandonnet.dev@gmail.com" target="_blank" rel="noopener">Écrire un courriel</a>
+      <a class="btn blue" href="https://www.linkedin.com/in/echandonnet/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn dark" href="https://github.com/tchendoh" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
